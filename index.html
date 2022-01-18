@@ -16,6 +16,11 @@
   console.log("Parent 1 Allele: " + parent1RandomAllele);
   console.log("Parent 2 Allele: " + parent2RandomAllele);
   
+  var childGenotype = parent1RandomAllele + parent2RandomAllele
+  if (childGenotype == "LD") {
+    childGenotype = "DL"
+  }
+  
   document.write(
     "Parent 1 Genotype: "
     + parent1Genotype
