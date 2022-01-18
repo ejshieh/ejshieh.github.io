@@ -1,6 +1,30 @@
 <script>
-  var quotes = ["quote 1", "quote 2 <br> with html link breaks"];
-  var rand_quote_index = Math.floor(Math.random() * quotes.length);
-  var rand_quote = quotes[rand_quote_index];
-  document.write(rand_quote);
+  const queryString = window.location.search;
+  
+  console.log(queryString);
+  
+  const urlParams = new URLSearchParams(queryString);
+  const parent1Genotype = urlParams.get('parent1')
+  const parent2Genotype = urlParams.get('parent2')
+  
+  console.log("Parent 1: " + parent1Genotype);
+  console.log("Parent 2: " + parent2Genotype);
+  
+  var parent1RandomAllele = parent1Genotype[Math.floor(Math.random() * 2)];
+  var parent2RandomAllele = parent2Genotype[Math.floor(Math.random() * 2)];
+  
+  console.log("Parent 1 Allele: " + parent1RandomAllele);
+  console.log("Parent 2 Allele: " + parent2RandomAllele);
+  
+  document.write(
+    "Parent 1 Genotype: "
+    + parent1Genotype
+    + "<br>"
+    + "Parent 2 Genotype: "
+    + parent2Genotype
+    + "<br>"
+    + "Child Genotype: "
+    + parent1RandomAllele + parent2RandomAllele
+    + "<br>"
+  );
 </script>
