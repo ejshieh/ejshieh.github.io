@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+  <img src="https://c.tenor.com/tt36MTcWUQ0AAAAC/science-dna.gif">
+  <div id="childGenotype"></div>
+</body>
+
 <script>
   const queryString = window.location.search;
   
@@ -21,6 +32,9 @@
     childGenotype = "DL"
   }
   
+  $( "#childGenotype" ).text("Child Genotype:" + childGenotype);
+  
+  /*
   document.write(
     "Parent 1 Genotype: "
     + parent1Genotype
@@ -29,7 +43,9 @@
     + parent2Genotype
     + "<br>"
     + "Child Genotype: "
-    + parent1RandomAllele + parent2RandomAllele
+    + childGenotype
     + "<br>"
   );
+  */
 </script>
+</html>
