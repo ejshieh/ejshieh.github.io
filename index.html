@@ -5,11 +5,13 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
-  <img src="https://c.tenor.com/tt36MTcWUQ0AAAAC/science-dna.gif">
-  <div id="childGenotype"></div>
+  <img id="loadingImage" src="https://cdn.dribbble.com/users/1100029/screenshots/6280755/crazy-dna-motion-dribble.gif" width="400" height="300">
+  <div id="childGenotype" style="width: 400px; height: 300px; color: white; background-color: rgb(36,35,36); display: flex; justify-content: center; align-items: center;"></div>
 </body>
 
 <script>
+  $( "#childGenotype" ).hide();
+  
   const queryString = window.location.search;
   
   console.log(queryString);
@@ -32,7 +34,11 @@
     childGenotype = "DL"
   }
   
-  $( "#childGenotype" ).text("Child Genotype:" + childGenotype);
+  setTimeout(function () {
+    $( "#childGenotype" ).text("Child Genotype: " + childGenotype);
+    $( "#childGenotype" ).show();
+    $( "#loadingImage" ).hide();
+  }, 3000)
   
   /*
   document.write(
